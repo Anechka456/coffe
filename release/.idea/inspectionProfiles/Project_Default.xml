@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="main.OlympResult.classes" />
+          <option value="main.OlympResult.schools" />
+          <option value="main.i" />
+          <option value="main.MyWidget.tableWidget" />
+          <option value="main.AddWidget.comboBox" />
+          <option value="main.AddWidget.pushButton" />
+          <option value="main.AddWidget.title" />
+          <option value="main.AddWidget.year" />
+          <option value="main.AddWidget.duration" />
+          <option value="main.AddWidget.update_result" />
+          <option value="main.MyWidget.addButton" />
+          <option value="setting.Setting.setting" />
+          <option value="setting.Setting.exit" />
+          <option value="setting.Setting.forest" />
+          <option value="setting.Setting.mountains" />
+          <option value="setting.Setting.space" />
+          <option value="PyQt6.QtWidgets.window.*" />
+          <option value="lvl.level_time_1.clicked" />
+          <option value="lvl.level_time_4.clicked" />
+          <option value="lvl.level_time_3.clicked" />
+          <option value="lvl.level_time_2.clicked" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
