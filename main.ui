@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>626</width>
-    <height>600</height>
+    <width>728</width>
+    <height>642</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>451</width>
-      <height>481</height>
+      <width>700</width>
+      <height>500</height>
      </rect>
     </property>
    </widget>
@@ -34,11 +34,30 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(170, 137, 114);
-font: 16pt &quot;MS UI Gothic&quot;;</string>
+     <string notr="true">color: rgb(0, 0, 0);
+font: 16pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
     </property>
     <property name="text">
      <string>Coffe</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addEditCoffeeForm">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>540</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
+    </property>
+    <property name="text">
+     <string>Удалить/Изменить данные</string>
     </property>
    </widget>
   </widget>
@@ -47,7 +66,7 @@ font: 16pt &quot;MS UI Gothic&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>626</width>
+     <width>728</width>
      <height>21</height>
     </rect>
    </property>

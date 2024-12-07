@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>822</width>
+    <height>348</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QRadioButton" name="add">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="edit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Изменить</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="title">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>60</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="roasting">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>100</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="zerno">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>140</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="description">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>180</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="price">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>220</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="volume">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>260</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>10</y>
+     <width>841</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 16pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Coffe</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>60</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Название</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>100</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Степень обжарки</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>140</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 11pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Молотый/в зернах</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>180</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Описание вкуса</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>220</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Цена</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>260</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Объем упаковки</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>180</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 8pt &quot;Myanmar Text&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Выбирете id если хотите&lt;br/&gt;изменить какие либо данные&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>302</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font: 12pt &quot;MS UI Gothic&quot;;
+background-color: rgb(170, 158, 146);</string>
+   </property>
+   <property name="text">
+    <string>Совершить дейтсвие</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

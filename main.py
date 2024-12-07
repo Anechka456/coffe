@@ -5,73 +5,96 @@ import sys
 from PyQt6 import uic  # Импортируем uic
 from PyQt6.QtWidgets import QApplication, QTableWidgetItem, QTableWidget, QMainWindow
 
-template = """<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>626</width>
-    <height>600</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>451</width>
-      <height>481</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>0</y>
-      <width>251</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(170, 137, 114);
-font: 16pt &quot;MS UI Gothic&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Coffe</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>626</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
-</ui>
-"""
+
+class AddWidget(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        uic.loadUi("addEditCoffeeForm.ui", self)  # Загружаем дизайн
+        con = sqlite3.connect("coffee.sqlite")
+        cur = con.cursor()
+        result = cur.execute("SELECT id FROM data").fetchall()
+
+        for i in result:
+            self.comboBox.insertItem(0, str(i[0]))
+
+        self.pushButton.clicked.connect(self.action)
+
+    def action(self):
+        if self.add.isChecked():
+            self.adding()
+        else:
+            self.editing()
+
+    def editing(self):
+        con = sqlite3.connect("coffee.sqlite")
+        cur = con.cursor()
+        id = self.comboBox.currentText()
+        title = self.title.text()
+        roasting = self.roasting.text()
+        zerno = self.zerno.text()
+        description = self.description.text()
+        price = self.price.text()
+        volume = self.volume.text()
+        data_id = cur.execute(f"""SELECT * FROM data WHERE id = {id}""").fetchone()
+        if title == '':
+            title = data_id[1]
+        if roasting == '':
+            roasting = data_id[2]
+        if zerno == '':
+            zerno = data_id[3]
+        if description == '':
+            description = data_id[4]
+        if price == '':
+            price = data_id[5]
+        if volume == '':
+            volume = data_id[6]
+        try:
+            cur.execute("UPDATE data SET "
+                        f"title = '{title}', "
+                        f"GroundGrains = '{zerno}', "
+                        f"DescriptionTaste = '{description}', "
+                        f"price = {price}, "
+                        f"DegreeRoasting = '{roasting}', "
+                        f"PackingVolume = {volume} "
+                        f"WHERE id = {id}")
+        except Exception as e:
+            self.statusBar().showMessage('Неверно заполнена форма')
+            print(e)
+        else:
+            con.commit()
+            self.parent().run()
+            self.close()
+
+    def adding(self):
+        con = sqlite3.connect("coffee.sqlite")
+        cur = con.cursor()
+        new_id = cur.execute("SELECT max(id) FROM data").fetchone()[0] + 1
+        title = self.title.text()
+        roasting = self.roasting.text()
+        zerno = self.zerno.text()
+        description = self.description.text()
+        if title == '' or roasting == '' or zerno == '' or description == '':
+            self.statusBar().showMessage('Неверно заполнена форма')
+            raise ValueError("Неверно заполнена форма")
+        try:
+            price = int(self.price.text())
+            volume = int(self.volume.text())
+            new_cofe = (new_id, title, roasting, zerno, description, price, volume)
+            cur.execute("INSERT INTO data VALUES (?, ?, ?, ?, ?, ?, ?)", new_cofe)
+        except Exception as e:
+            self.statusBar().showMessage('Неверно заполнена форма')
+        else:
+            con.commit()
+            self.parent().run()
+            self.close()
 
 
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        f = io.StringIO(template)
-        uic.loadUi(f, self)  # Загружаем дизайн
+        uic.loadUi("main.ui", self)  # Загружаем дизайн
+
+        self.addEditCoffeeForm.clicked.connect(self.adding)
 
         self.run()
 
@@ -89,6 +112,10 @@ class MyWidget(QMainWindow):
             for j, elem in enumerate(row):
                 self.tableWidget.setItem(
                     i, j, QTableWidgetItem(str(elem)))
+
+    def adding(self):
+        self.add_form = AddWidget(self)
+        self.add_form.show()
 
     def closeEvent(self, event):
         # При закрытии формы закроем и наше соединение
